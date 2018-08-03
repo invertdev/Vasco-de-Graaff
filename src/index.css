@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+/*html{
+  background: -moz-linear-gradient(top, #e02323 0%, #8a07ba 100%);
+  background: -webkit-linear-gradient(top, #e02323 0%,#8a07ba 100%);
+  background: linear-gradient(to bottom, #e02323 0%,#8a07ba 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02323', endColorstr='#8a07ba',GradientType=0 );
+}*/
