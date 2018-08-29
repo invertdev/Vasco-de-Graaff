@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import Body from './Body'
+import MessageApp from './MessageApp'
 
 
-const MessageContainer = styled.div`
+const Container = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -11,14 +11,6 @@ const MessageContainer = styled.div`
   padding: 60px;
 
 `
-const Center = styled.div`
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  color: #000;
-
-`
-
 
 const Box = styled.div`
   border: 1px solid #bcbcbc;
@@ -51,25 +43,25 @@ const Left = styled.div`
   text-align: left;
 `
 
-export default class MessagBoard extends Component {
+export default class MessageContainer extends Component {
   render() {
     return(
-      <MessageContainer draggable="true" className="resizable">
+      <Container>
         <Box>
           <Top>
             <Left>
               <Circle red />
               <Circle yellow/>
               <Circle green/>
-            </Left> 
-            <Center>
-              Vasco de Graaff
-            </Center>
+            </Left>
           </Top>
-          <Body/>
-          
+          <MessageApp>
+            <Top>
+            Vasco de Graaff
+            </Top>
+          </MessageApp>
         </Box>
-      </MessageContainer>
+      </Container>
     )
   }
 }

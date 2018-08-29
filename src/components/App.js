@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import './App.css';
-import Title from './components/Title'
-import Avatar from './components/Avatar'
-//import Navbar from './components/Navbar'
-import Description from './components/Description'
-import MessageBoard from './components/MessageBoard'
+import Terminal from './TerminalReplica'
 import styled from 'styled-components'
+import MessageContainer from './Container';
 
+
+const Title = styled.div`
+  font-size: 4rem;
+  font-family: 'Oswald' , sans-serif; 
+  text-align: center;
+`
 
 const Button = styled.button`
   height: 50px;
@@ -23,10 +26,22 @@ const Button = styled.button`
   color: #ffff;
 `
 
+const Avatar = styled.img`
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #000000;
+  /* display: block and margins auto to center allign objects*/
+`
+
+
 
 class App extends Component {
   state = {
-    seeMore: false,
+    seeMore: true,
   }
   /* state set default false */
   seeMore = () => {
@@ -36,12 +51,12 @@ class App extends Component {
     return (
       <div>
         <Title>VASCO DE GRAAFF</Title>
-        <Avatar src={require('./avatarpic.jpg')} alt="avatar"/>
+        <Avatar src={require('../avatarpic.jpg')} alt="avatar"/>
         <div> {this.state.seeMore ? (
-          <MessageBoard/>
+          <MessageContainer/>
         ):
           <div>
-            <Description/>
+            <Terminal/>
             <Button onClick={this.seeMore}>See More</Button>
           </div>
       }
