@@ -4,20 +4,33 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Message from './Message';
 import {selectButton} from '../actions';
+import '../reducer/reducer-message';
+import styled from 'styled-components';
+
+const Bottom = styled.div`
+  position: inherit;
+`
 
 class MessageApp extends Component {
-  createMessageItem() {
-    return this.props.MessageStore.map((message) => {
+  createButton() {
+    return this.props.buttons.map((button) => {
       return(
-        <button key={message.id} onClick={() => this.props.selectButton()}>{message.button}</button>
-      )
+        <button 
+          key={button.id} 
+          onClick={() => this.props.selectButton(button.id, button.message)}
+        >
+          {button.button}
+          </button>
+      );
     });
   }
   render() {
     return(
       <div>
-        <Message/>
-        <div>{this.createMessageItem()}</div>
+        <div>
+          <Message/>
+        </div>        
+        <Bottom>{this.createButton()}</Bottom>
       </div>
     )
   }
@@ -25,7 +38,7 @@ class MessageApp extends Component {
 
 function mapStateToProps(state) {
   return{
-    MessageStore: state.MessageStore
+    buttons: state.buttons
   }
 };
 

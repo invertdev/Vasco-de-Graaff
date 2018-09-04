@@ -1,8 +1,8 @@
-export const selectButton = (message) => {
-  console.log("Button Clicked");
+export const selectButton = (id, message) => {
   return{
     type: "BUTTON_CLICKED",
-    payload: message
+    id,
+    message
   }
   //This is the action
 };
