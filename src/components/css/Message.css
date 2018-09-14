@@ -1,0 +1,12 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  
+  .question-row {
+      display: flex;
+  }
+  .answer-row {
+      display: flex;
+      justify-content: flex-end;
+  }
+}

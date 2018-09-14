@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import MessageApp from './MessageApp'
+import MessageApp from '../components/MessageApp'
 
 
 const Container = styled.div`
@@ -9,7 +9,6 @@ const Container = styled.div`
   margin-right: auto;
   width: 600px;
   padding: 60px;
-
 `
 
 const Box = styled.div`

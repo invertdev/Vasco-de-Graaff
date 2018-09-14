@@ -2,13 +2,11 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
 
-
-const Container = styled.div`
+/* const Container = styled.div`
   width: 100%;
-`;
+`; */
 
 const Question = styled.div`
-  float: right;
   font-family: Roboto, sans-serif;
   font-size: 1em;
   color: #000000;
@@ -17,6 +15,8 @@ const Question = styled.div`
   border-radius: 20px;
   background: #dcdcdc;
   border: 1px solid #dcdcdc;
+  display: inline-flex;
+
 `;
 const Reply = styled.div`
   font-family: Roboto, sans-serif;
@@ -27,53 +27,35 @@ const Reply = styled.div`
   border-radius: 20px;
   background: #0084FF;
   border: 1px solid #dcdcdc;
-  display: inline-block;
+  display: block;
+  text-align: right;
+  display: inline-flex;
+  float: right;
 `;
 
-/* matchIdToMessage(){
-  const message = state.latestMessage.find(message => message.id === action.id);
-  if (message) {
-// do something with it
-  } else {
-// not found
-  }
-  //This matches the id of action.id and latestMessage.id
-} */
-
-/* <h1>{messages.question}</h1> */
-
-
-
-/* map((messages) => {
-        return(
-          <div key={messages.id}>
-            {messages.question}
-          </div>
-        );
-      }); */
+// Message only returns the new states
 class Message extends Component {
   
   returnMessage(){
     if (this.props.returnMessage) {
-      return <div key={this.returnMessage.id}>{this.props.returnMessage.question}</div>
+      return(
+        <div>
+          <div className='message-container question-row'>
+            <Question>{this.props.returnMessage.question}</Question>
+          </div>
+          <div className='message-container answer-row'>
+            <Reply>{this.props.returnMessage.reply}</Reply>
+          </div>
+        </div>
+      );
     }
   }
   render() {
     return(
       <div>
-        <Container>
-          <Question>
-            {this.returnMessage()}
-          </Question>
-        </Container>
-        <Container>
-          <Reply>
-........
-          </Reply>
-        </Container>
-        
-        
-        
+        <div>
+          {this.returnMessage()}
+        </div> 
       </div>
     )
   }

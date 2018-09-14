@@ -3,7 +3,8 @@ import './App.css';
 import Terminal from './TerminalReplica'
 import styled from 'styled-components'
 import MessageContainer from '../containers/MessageContainer';
-/* import Header from './Navigation/header' */
+
+
 const Title = styled.div`
   font-size: 4rem;
   font-family: 'Oswald' , sans-serif; 
@@ -40,7 +41,7 @@ const Avatar = styled.img`
 
 class App extends Component {
   state = {
-    seeMore: false,
+    seeMore: true,
   }
   /* state set default false */
   seeMore = () => {
@@ -49,7 +50,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <Header/> */}
         <Title>VASCO DE GRAAFF</Title>
         <Avatar src={require('../IMG_4625.jpeg')} alt="avatar"/>
         <div> {this.state.seeMore ? (
