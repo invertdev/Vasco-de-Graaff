@@ -42,6 +42,7 @@ const MessageState = [
   }
 ];
 
+const messageDisplay = [];
 
 function ButtonReducer(state = initialMessageState, action) {
   switch (action.type) {
@@ -53,23 +54,41 @@ function ButtonReducer(state = initialMessageState, action) {
   }
 }
 
-function MessageReducer(state = [], action) {
+/*action.id
+    ? {
+        ...state,
+        DisplayMessage: (state.DisplayMessage || []).concat(newestMessage)
+    } : state
+  );
+  */
+
+function returnMessage(state = null, action) {
+  const newestMessage = MessageState.find(message => message.id === action.id);
+  const messageDisplay = [];
+  //checks current action.id (button click) and matches it to the message.id
+  //need to add more logic to control the states and the view
+
+  console.log(newestMessage);
+  return()
+}
+/* function combineMessage(state = null, action) {
+  const combineMessage = 
+} */
+
+function MessageReducer(state = MessageState, action) {
   switch (action.type) {
     case "BUTTON_CLICKED": {
-      const newestMessage = MessageState.find(message => message.id === action.id);
-      console.log(newestMessage);
-      console.log(action);
-      //const {message} = action;
-      return state.concat(newestMessage);
-      //reducer should determain a new state based on (state, action) arguments
+      return MessageState;
     }
-    default: return state;
+    default:
+      return state;
   }
 }
 
 const rootReducer = combineReducers({
   buttons: ButtonReducer,
-  Messages: MessageReducer
-})
+  messages: MessageReducer,
+  returnMessage: returnMessage
+});
 
 export default rootReducer;

@@ -40,7 +40,7 @@ const Avatar = styled.img`
 
 class App extends Component {
   state = {
-    seeMore: false,
+    seeMore: true,
   }
   /* state set default false */
   seeMore = () => {

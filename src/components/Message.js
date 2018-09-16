@@ -34,27 +34,36 @@ const Reply = styled.div`
 `;
 
 // Message only returns the new states
+
+
+
+
+/*  */
 class Message extends Component {
   
-  returnMessage(){
-    if (this.props.returnMessage) {
-      return(
-        <div>
-          <div className='message-container question-row'>
-            <Question>{this.props.returnMessage.question}</Question>
+  DisplayMessage(){
+    //it doesnt have to display anything if the state is empty
+    if (this.props.Messages) {
+      //.map() iterates though
+      return this.props.Messages.map((message) => {
+        return(
+          <div>
+            <div className='message-container question-row'>
+              <Question key={message.id}>{message.question}</Question>
+            </div>
+            <div className='message-container answer-row'>
+              <Reply key={message.id}>{message.reply}</Reply>
+            </div>
           </div>
-          <div className='message-container answer-row'>
-            <Reply>{this.props.returnMessage.reply}</Reply>
-          </div>
-        </div>
-      );
+        )
+      })
     }
   }
   render() {
     return(
       <div>
         <div>
-          {this.returnMessage()}
+          {this.DisplayMessage()}
         </div> 
       </div>
     )
@@ -63,7 +72,7 @@ class Message extends Component {
 
 function mapStateToProps(state) {
   return{
-    returnMessage: state.returnMessage,
+    Messages: state.Messages,
   }
 };
 
