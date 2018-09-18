@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import './header.css';
 import HamburgerMenu from './HamburgerMenu';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+import {menuSelected} from '../../actions/menuSelected'
 
 
-export default class Header extends Component{
+class Header extends Component{
   render(){
     return(
       <div className='container'>
         <HamburgerMenu 
         className='burgerMenu'
+        onClick={() => this.props.menuSelected()}
         isOpen={true}
         width={42}
         height={36}
@@ -21,3 +25,15 @@ export default class Header extends Component{
     )
   }
 }
+
+function mapStateToProps(state) {
+  return{
+    Menu: state.Menu
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({menuSelected: menuSelected}, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

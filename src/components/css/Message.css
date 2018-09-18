@@ -10,3 +10,51 @@
       justify-content: flex-end;
   }
 }
+
+
+.message {
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 20px;
+}
+
+.question {
+    background: #0084FF;
+    color: #FFFFFF;
+    border: 1px solid #dcdcdc;
+    align-self: flex-end;
+    text-align: end;
+}
+
+.answer {
+    background: #dcdcdc;
+    color: #000000;
+    border: 1px solid #dcdcdc;
+
+}
+
+.parent-container {
+    width: 100%;
+    /*test purpose*/
+    display: inline-flex;
+
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.flex-end{
+    flex-direction: row-reverse;
+}
+
+
+.container-sizing {
+    max-height: 500px;
+    min-height: 50px;
+    overflow-y: scroll;
+}

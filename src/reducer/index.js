@@ -7,11 +7,11 @@ const initialMessageState = [
   },
   {
     id: 2,
-    button: "Hot pockets"
+    button: "Who are you?"
   },
   {
     id: 3,
-    button: "Button 3"
+    button: "When did you start programming?"
   },
   {
     id: 4,
@@ -22,26 +22,25 @@ const initialMessageState = [
 const MessageState = [
   {
     id: 1,
-    question: "This is a question",
-    reply: "This is a reply"
+    question: "Whats up?",
+    reply: "School n stuff"
   },
   {
     id: 2,
-    question: "Question 2",
-    reply: "Reply 2"
+    question: "Who are you?",
+    reply: "Just some random kiddo in the middle of nowhere"
   },
   {
     id: 3,
-    question: "Question 3",
-    reply: "Reply 3"
+    question: "When did you start programming",
+    reply: "Consistantly in July 2018, but I've done it for a while already"
   },
   {
     id: 4,
-    question: "Question 4",
-    reply: "Reply 4"
+    question: "Whats your story?",
+    reply: "404 not found"
   }
 ];
-
 
 function ButtonReducer(state = initialMessageState, action) {
   switch (action.type) {
@@ -67,9 +66,19 @@ function MessageReducer(state = [], action) {
   }
 }
 
+function MenuReducer(state = false, action) {
+  switch (action.type) {
+    case "MENU_SELECTED": {
+      return true;
+    }
+    default: return state;
+  }
+}
+
 const rootReducer = combineReducers({
   buttons: ButtonReducer,
-  Messages: MessageReducer
+  Messages: MessageReducer,
+  Menu: MenuReducer
 })
 
 export default rootReducer;

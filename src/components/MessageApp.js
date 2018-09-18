@@ -3,46 +3,32 @@ import '../reducer'
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Message from './Message';
-import {selectButton} from '../actions';
+import {selectButton} from '../actions/buttonClick';
 import '../reducer/reducer-message';
-import styled from 'styled-components';
-
-const Bottom = styled.div`
-  position: inherit;
-  
-  text-align: center;
-`;
-
-const MinimumHeight = styled.div`
-  min-height: 150px;  
-`;
-
-const MessageButton = styled.button`
-  column-gap: 20px;
-`;
-
+import './css/Button.css'
 
 class MessageApp extends Component {
   createButton() {
     return this.props.buttons.map((button) => {
       return(
-        <MessageButton 
+        <button 
+          className='button'
           key={button.id} 
           onClick={() => this.props.selectButton(button.id, button.message)}
         >
           {button.button}
-          </MessageButton>
+          </button>
       );
     });
   }
   render() {
     return(
-      <MinimumHeight>
+      <div className='container-sizing'>
         <div>
           <Message/>
         </div>        
-        <Bottom>{this.createButton()}</Bottom>
-      </MinimumHeight>
+        <div className='button-align'>{this.createButton()}</div>
+      </div>
     )
   }
 };

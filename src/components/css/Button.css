@@ -1,0 +1,19 @@
+.button{
+  border-radius: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 1px;
+  padding:3px;
+  background: #6221ea;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #ffff;
+}
+
+.button-align{
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
