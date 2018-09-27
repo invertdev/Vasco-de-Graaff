@@ -1,0 +1,30 @@
+.button {
+  height: 50px;
+  width: 100px;
+  border-radius: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 2px;
+  padding: 3px;
+  background: #6221ea;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: #ffff;
+}
+
+.title {
+  font-size: 4rem;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #000000;
+}

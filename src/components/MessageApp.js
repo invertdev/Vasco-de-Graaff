@@ -5,14 +5,15 @@ import {connect} from 'react-redux';
 import Message from './Message';
 import {selectButton} from '../actions/buttonClick';
 import '../reducer/reducer-message';
-import './css/Button.css'
+import './css/Button.css';
+import './css/DisableHighlight.css'
 
 class MessageApp extends Component {
   createButton() {
     return this.props.buttons.map((button) => {
       return(
         <button 
-          className='button'
+          className='button noSelect'
           key={button.id} 
           onClick={() => this.props.selectButton(button.id, button.message)}
         >

@@ -54,7 +54,14 @@
 
 
 .container-sizing {
-    max-height: 500px;
+    max-height: 400px;
     min-height: 50px;
     overflow-y: scroll;
 }
+
+.circle {
+    height: 16px;
+    border-radius: 20px;
+    margin: 4px;
+    margin-left: 6px;
+  }

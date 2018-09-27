@@ -69,7 +69,12 @@ function MessageReducer(state = [], action) {
 function MenuReducer(state = false, action) {
   switch (action.type) {
     case "MENU_SELECTED": {
-      return true;
+      if(state === false){
+        return true
+      }else if(state === true){
+        return false
+      }
+      break
     }
     default: return state;
   }

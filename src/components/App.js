@@ -1,68 +1,65 @@
-import React, { Component } from 'react'
-import './App.css';
-import Terminal from './TerminalReplica'
-import styled from 'styled-components'
-import MessageContainer from '../containers/MessageContainer';
-import Header from './Navigation/header'
-
-const Title = styled.div`
-  font-size: 4rem;
-  font-family: 'Oswald' , sans-serif; 
-  text-align: center;
-`
-
-const Button = styled.button`
-  height: 50px;
-  width: 100px;
-  border-radius: 50px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-width: 2px;
-  padding:3px;
-  background: #6221ea;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1em;
-  color: #ffff;
-`
-
-const Avatar = styled.img`
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border: 3px solid #000000;
-  /* display: block and margins auto to center allign objects*/
-`
-
+import React, { Component } from "react";
+import "./App.css";
+import Terminal from "./TerminalReplica";
+import MessageContainer from "../containers/MessageContainer";
+import MenuButton from "./Menu/header";
+import Menu from "./Menu/Menu";
+import "./css/DisableHighlight.css";
+import "./css/App.css";
+import "./css/flexbox.css";
+import "./Background/background";
+import Canvas from "../components/Background/background"
+import Home from "../pages/home";
+import More from "../pages/more-about-me";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 class App extends Component {
   state = {
-    seeMore: false,
-  }
+    seeMore: false
+  };
   /* state set default false */
   seeMore = () => {
-    this.setState({ seeMore: true })
-  }
+    this.setState({ seeMore: true });
+  };
+
   render() {
     return (
-      <div>
-        <Header/>
-        <Title>VASCO DE GRAAFF</Title>
-        <Avatar src={require('../IMG_4625.jpeg')} alt="avatar"/>
-        <div> {this.state.seeMore ? (
-          <MessageContainer/>
-        ):
-          <div>
-            <Terminal/>
-            <Button onClick={this.seeMore}>See More</Button>
+      <Router>
+        <div> 
+          <Canvas />
+          <div className="grid relative">
+            <MenuButton />
+            <div className="center-grid grid-row-start">
+              <div className="flex flex-direction-column">
+                <Menu />
+                <div className="title ">VASCO DE GRAAFF</div>
+                <img
+                  className="avatar "
+                  src={require("../IMG_4625.jpeg")}
+                  alt="avatar"
+                />
+                <div className="">
+                  {" "}
+                  {this.state.seeMore ? (
+                    <MessageContainer />
+                  ) : (
+                    <div>
+                      <Terminal className="" />
+                      <button onClick={this.seeMore} className="button noSelect">
+                        See More
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
-      }
-        </div>
-      </div>
+          <Route exact path='/' component={Home}/>
+          <Route path='/more' component={More}/>
+
+      </div> 
+    </Router>
     );
   }
 }
