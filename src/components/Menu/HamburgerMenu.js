@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 export default function HamburgerMenu(props) {
   const width = `${props.width || 36}px`,
     height = `${props.height || 30}px`,
+    // eslint-disable-next-line
     halfHeight = `${parseInt(height.replace("px", "")) / 2}px`,
     isOpen = props.isOpen || false,
     strokeWidth = props.strokeWidth || 2,

@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
-import MessageContainer from "../containers/MessageContainer"
-
+import React, {Component} from "react";
+import MessageContainer from "../containers/MessageContainer";
+import "../components/css/flexbox.css";
 class More extends Component {
-  render(){
+  render() {
     return(
-      <MessageContainer/>
+      <div className="center-grid">
+        <MessageContainer/>
+      </div>
     )
   }
 }

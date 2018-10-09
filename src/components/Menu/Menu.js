@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "../css/Menu.css";
 import { connect } from "react-redux";
-import { BrowserRouter as Link } from "react-router-dom";
-import Home from "../../pages/home";
-import More from "../../pages/more-about-me";
+import {  Link } from "react-router-dom";
 
 class Menu extends Component {
   render() {
@@ -13,8 +11,11 @@ class Menu extends Component {
       <div>
         <div id="myNav" style={style} className="overlay">
           <div className="overlay-content">
-            <Link to='/' >Home</Link>
-            <Link to='/more' >More about me</Link>
+          <h2><Link to='/' className='menuLink'>"HOME"</Link></h2>
+          <h2><Link to='/more' className='menuLink'>"MORE"</Link></h2>
+          <h2><Link to='/gallery' className='menuLink'>"GALLERY</Link></h2>
+          <h2>"PLAYGROUND"</h2>
+          <h2><a className='menuLink' href='https://github.com/invertdev' target="_blank" rel="noopener noreferrer">"GITHUB"</a></h2>
           </div>
         </div>
       </div>

@@ -1,0 +1,14 @@
+h2 {
+  text-align: center;
+}
+
+.cameraEmoji {
+  font-size: 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+.heading {
+  grid-column-start: 4;
+  grid-column-end: 7;
+}

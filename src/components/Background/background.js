@@ -26,10 +26,10 @@ class Canvas extends Component {
         params={{
           particles: {
             number: {
-              value: 50,
+              value: 30,
               density: {
                 enable: true,
-                value_area: 1000
+                value_area: 900
               }
             },
             color: {
@@ -38,11 +38,11 @@ class Canvas extends Component {
             shape: {
               type: "circle",
               stroke: {
-                width: 0,
+                width: 1,
                 color: "#000000"
               },
               image: {
-                src: "img/github.svg",
+                src: "",
                 width: 100,
                 height: 100
               }
@@ -81,14 +81,14 @@ class Canvas extends Component {
             },
             move: {
               enable: true,
-              speed: 1,
+              speed: 6,
               direction: "none",
-              random: false,
+              random: true,
               straight: false,
               out_mode: "out",
               bounce: false,
               attract: {
-                enable: false,
+                enable: true,
                 rotateX: 600,
                 rotateY: 1200
               }

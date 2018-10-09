@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import Typist from "react-typist";
 import "./css/terminal.css";
-import './css/flexbox.css';
+import "./css/flexbox.css";
 
 export default class Description extends Component {
   state = {
     terminal: true,
-    renderMsg: false
+    renderMsg1: false,
+    renderMsg2: false,
   };
 
   onNameTyped = () => {
-    this.setState({ renderMsg: true });
+    this.setState({ renderMsg1: true });
   };
+
+  onTyped =() => {
+    this.this.setState({renderMsg2: true});
+  }
 
   onClose = () => {
     this.setState({ terminal: false });
@@ -19,7 +24,7 @@ export default class Description extends Component {
   /* This allow the second text to be rendered after the first has been typed */
   render() {
     return (
-      <div className=''>
+      <div className="">
         {this.state.terminal ? (
           <div className="">
             <div className="cmd">
@@ -34,16 +39,30 @@ export default class Description extends Component {
                   startDelay={2000}
                   cursor={{ hideWhenDone: true }}
                 >
-                  <a>Hey There</a>
+                  <a className="terminal-text">Hey There</a>
                   <Typist.Backspace count={9} delay={600} />
-                  <a>My Name is Vasco</a>
+                  <a className="terminal-text">
+                    I see you checking out my website{" "}
+                  </a>
                 </Typist>
                 <div>
-                  {this.state.renderMsg ? (
-                    <Typist startDelay={1000}>
-                      Im a high school student living on the small island of
-                      Phuket
-                    </Typist>
+                  {this.state.renderMsg1 ? (
+                    <div>
+                      <a className="terminal-text">
+                        <Typist startDelay={900} onTypingDone={this.onTyped}>
+                          It was made using React.js and a few libraries
+                        </Typist>
+                      </a>
+                      <div>
+                        {this.state.renderMsg2 ? (
+                        <Typist startDelay={4000}>
+                          <a className="terminal-text">I hope you like it</a>
+                          <Typist.Backspace count={7} />
+                          <a className="terminal-text">❤️ it</a>
+                        </Typist>
+                        ) : null}
+                      </div>
+                    </div>
                   ) : null}
                 </div>
               </div>

@@ -1,11 +1,28 @@
-import React, { Component } from 'react';
-import App from '../components/App';
+import React, { Component } from "react";
+import Terminal from "../components/TerminalReplica";
+import "../components/css/DisableHighlight.css";
+import "../components/css/flexbox.css";
+import "../components/Background/background";
 
 class Home extends Component {
   render() {
-    return(
-      <h1>Home</h1>
-    )
+    return (
+        <div className="center-grid grid-row-start">
+          <div className="flex flex-direction-column">
+
+            <div className="title ">VASCO DE GRAAFF</div>
+            <img
+              className="avatar "
+              src={require("../IMG_4625.jpeg")}
+              alt="avatar"
+            />
+            <div>
+              <Terminal className="" />
+            </div>
+          </div>
+        </div>
+
+    );
   }
 }
 
