@@ -7,8 +7,8 @@ import "../components/Background/background";
 class Home extends Component {
   render() {
     return (
-        <div className="center-grid grid-row-start">
-          <div className="flex flex-direction-column">
+
+          <div className="flex flex-direction-column Heading">
 
             <div className="title ">VASCO DE GRAAFF</div>
             <img
@@ -20,7 +20,7 @@ class Home extends Component {
               <Terminal className="" />
             </div>
           </div>
-        </div>
+
 
     );
   }

@@ -18,9 +18,9 @@ class App extends Component {
     return (
       <div>
         <Canvas /> 
-        <div className="grid relative">
+        <div className="grid-container relative">
           <MenuButton />
-          <Menu />
+          <Menu className="Menu"/>
           <Route exact path="/" component={Home} />
           <Route path="/more" component={More} />
           <Route path="/gallery" component={Gallery} />

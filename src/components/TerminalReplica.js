@@ -15,7 +15,7 @@ export default class Description extends Component {
   };
 
   onTyped =() => {
-    this.this.setState({renderMsg2: true});
+    this.setState({renderMsg2: true});
   }
 
   onClose = () => {
@@ -55,9 +55,9 @@ export default class Description extends Component {
                       </a>
                       <div>
                         {this.state.renderMsg2 ? (
-                        <Typist startDelay={4000}>
+                        <Typist startDelay={2500}>
                           <a className="terminal-text">I hope you like it</a>
-                          <Typist.Backspace count={7} />
+                          <Typist.Backspace count={7} Delay={3500}/>
                           <a className="terminal-text">❤️ it</a>
                         </Typist>
                         ) : null}

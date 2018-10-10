@@ -5,16 +5,14 @@ import "../components/css/text.css"
 class Gallery extends Component {
   render() {
     return(
-
-      <div className='heading'>
-        <h2>I sometimes take "PICTURES"  <span role="img" className='cameraEmoji'>📷</span></h2> 
-        <div className='gallery'>
-          <div></div>
-
+      <React.Fragment>
+        <div className='Heading'>
+          <h2>I sometimes take "PICTURES"  <span role="img" className='cameraEmoji'>📷</span></h2> 
         </div>
-      </div>
-      
-
+        <div className='Gallery gallery-area'>
+          <div></div>
+        </div>
+      </React.Fragment>
     )
   }
 }
