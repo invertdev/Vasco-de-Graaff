@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import MessageApp from "../components/MessageApp";
-import "../components/css/terminal.css";
-import '../components/css/Message.css'
+import MessageApp from "./MessageApp";
 
 export default class MessageContainer extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="col-lg-5 col-xs-11" style={{paddingTop:'5rem'}}>
         <div className="box">
           <div className="messageapp">
             <div className="left">

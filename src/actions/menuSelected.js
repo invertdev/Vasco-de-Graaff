@@ -4,3 +4,10 @@ export const menuSelected = (click) => {
     click,
   }
 };
+
+export const menuClose = (click) => {
+  return{
+    type: "MENU_CLOSE",
+    click,
+  }
+}

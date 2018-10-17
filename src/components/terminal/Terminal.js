@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Typist from "react-typist";
-import "./css/terminal.css";
-import "./css/flexbox.css";
 
-export default class Description extends Component {
+
+export default class Terminal extends Component {
   state = {
     terminal: true,
     renderMsg1: false,
@@ -21,23 +20,24 @@ export default class Description extends Component {
   onClose = () => {
     this.setState({ terminal: false });
   };
-  /* This allow the second text to be rendered after the first has been typed */
+/* This allow the second text to be rendered after the first has been typed */
   render() {
     return (
-      <div className="">
+      <div className="flex flex-auto">
         {this.state.terminal ? (
-          <div className="">
-            <div className="cmd">
-              <div className="top">
+
+            <div className="cmd flex flex-auto flex-column" >
+              <div className="top flex flex-auto">
                 <button className="circle red" onClick={this.onClose} />
                 <button className="circle yellow" />
                 <button className="circle green" />
               </div>
-              <div className="text">
-                <Typist
+              <div className="text flex flex-auto flex-column">
+                 <Typist
                   onTypingDone={this.onNameTyped}
                   startDelay={2000}
                   cursor={{ hideWhenDone: true }}
+                  className="flex flex-auto"
                 >
                   <a className="terminal-text">Hey There</a>
                   <Typist.Backspace count={9} delay={600} />
@@ -64,10 +64,10 @@ export default class Description extends Component {
                       </div>
                     </div>
                   ) : null}
-                </div>
+                </div> 
               </div>
             </div>
-          </div>
+
         ) : null}
       </div>
     );

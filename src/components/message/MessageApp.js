@@ -1,13 +1,10 @@
 import React, { Component } from "react";
-import "../reducer";
+import "../../reducer";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Message from "./Message";
-import { selectButton } from "../actions/buttonClick";
-import { contact } from "../actions/buttonClick";
-import "../reducer/reducer-message";
-import "./css/Button.css";
-import "./css/DisableHighlight.css";
+import { selectButton } from "../../actions/buttonClick";
+import { contact } from "../../actions/buttonClick";
 
 class MessageApp extends Component {
   createButton() {
@@ -29,7 +26,7 @@ class MessageApp extends Component {
         <div>
           <Message />
         </div>
-        <div className="button-align">{this.createButton()}</div>
+        <div className="button-align flex">{this.createButton()}</div>
         <button onClick={() => this.props.contact()} />
       </div>
     );

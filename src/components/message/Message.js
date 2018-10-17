@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './css/Message.css'
+
 
 // Message only returns the new states
 class Message extends Component {

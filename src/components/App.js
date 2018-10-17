@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
-import MenuButton from "./Menu/header";
+import MenuButton from "./Menu/MenuButton";
 import Menu from "./Menu/Menu";
-import "./css/DisableHighlight.css";
-import "./css/App.css";
-import "./css/flexbox.css";
-import "./Background/background";
-import Canvas from "../components/Background/background";
+import "./css/index.css"
+import Canvas from "./Background/Canvas";
 import Home from "../pages/home";
 import More from "../pages/more-about-me";
 import Gallery from "../pages/gallery";
@@ -16,15 +12,15 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="flex relative" style={{ zIndex: 1, width: '100%' }}>
         <Canvas /> 
-        <div className="grid-container relative">
+
           <MenuButton />
           <Menu className="Menu"/>
           <Route exact path="/" component={Home} />
           <Route path="/more" component={More} />
           <Route path="/gallery" component={Gallery} />
-        </div>
+
       </div>
     );
   }

@@ -77,6 +77,9 @@ function MenuReducer(state = false, action) {
       }
       break
     }
+    case "MENU_CLOSE": {
+      return false;
+    }
     default: return state;
   }
 }

@@ -1,10 +1,10 @@
 import React, {Component} from "react";
-import MessageContainer from "../containers/MessageContainer";
-import "../components/css/flexbox.css";
+import MessageContainer from "../components/message/MessageContainer";
+
 class More extends Component {
   render() {
     return(
-      <div className="center-grid">
+      <div className="flex-auto flex justify-center">
         <MessageContainer/>
       </div>
     )

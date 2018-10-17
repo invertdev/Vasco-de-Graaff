@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import './header.css';
 import HamburgerMenu from './HamburgerMenu';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {menuSelected} from '../../actions/menuSelected';
-import '../css/DisableHighlight.css';
-import '../css/flexbox.css'
 
+const style = {
+  paddingTop: '20px',
+  zIndex: 4
+}
 class MenuButton extends Component{
   render(){
     return(
-      <div className='grid-end menu'>
-        <button className='menu-button noSelect '
+      <div className=' absolute ' style={style}>
+        <button className=' menu-button noSelect menu'
         onClick={()=>{
           this.props.menuSelected()
         }}>
           <HamburgerMenu
-          className='burgerMenu z-index'
           isOpen={this.props.Menu}
           width={42}
           height={36}
           strokeWidth={4}
           rotate={0}
-          color='#6221ea'
+          color='#ffff'
           borderRadius={0}
           animationDuration={0.5}/>
         </button>

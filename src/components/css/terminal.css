@@ -48,13 +48,6 @@
   background: #ffffff;
 }
 
-.container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 600px;
-}
-
 .messageapp {
   height: 25px;
   border-bottom: 1px solid #dcdcdc;

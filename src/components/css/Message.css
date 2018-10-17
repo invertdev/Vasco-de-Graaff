@@ -14,7 +14,7 @@
 
 .message {
     font-family: Roboto, sans-serif;
-    font-size: 1em;
+    font-size: 1.4em;
     padding: 10px;
     margin: 15px;
     border-radius: 20px;
@@ -54,8 +54,8 @@
 
 
 .container-sizing {
-    max-height: 400px;
     min-height: 50px;
+    max-height: 35rem;
     overflow-y: scroll;
 }
 

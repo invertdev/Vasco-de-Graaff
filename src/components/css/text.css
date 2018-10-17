@@ -7,8 +7,3 @@ h2 {
   text-align: center;
   width: 100%;
 }
-
-.heading {
-  grid-column-start: 4;
-  grid-column-end: 7;
-}
