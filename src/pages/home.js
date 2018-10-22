@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Terminal from "../components/terminal/Terminal";
+import MessageContainer from "../components/message/MessageContainer";
 class Home extends Component {
   state = { width: "0px", height: "0px" };
   componentDidMount() {
@@ -49,8 +50,10 @@ class Home extends Component {
               <div className="" style={{width: terminalsize}} >
                 <Terminal />
               </div>
-              <div>
-              
+              <div>{(this.state.width > 1024) ? 
+                <MessageContainer /> : null
+              }
+                
               </div>
           </div>
         </div>
