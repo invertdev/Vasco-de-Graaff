@@ -6,6 +6,7 @@ import Message from "./Message";
 import { selectButton } from "../../actions/buttonClick";
 import { contact } from "../../actions/buttonClick";
 
+
 class MessageApp extends Component {
   createButton() {
     return this.props.buttons.map(button => {
@@ -27,7 +28,20 @@ class MessageApp extends Component {
           <Message />
         </div>
         <div className="button-align flex">{this.createButton()}</div>
-        <button onClick={() => this.props.contact()} />
+        <div>
+          {this.props.ContactForm ? null: 
+          <button onClick={() => this.props.contact()} className="button">Contact</button>}
+        </div>
+        
+        <div>
+          {this.props.ContactForm ? (
+            <div >
+              <form>
+                <input className="flex-auto col-xs-12"/>
+              </form>
+            </div>
+          ): null}
+        </div>
       </div>
     );
   }
@@ -35,7 +49,8 @@ class MessageApp extends Component {
 
 function mapStateToProps(state) {
   return {
-    buttons: state.buttons
+    buttons: state.buttons,
+    ContactForm: state.ContactForm
   };
 }
 

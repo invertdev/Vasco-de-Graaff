@@ -39,3 +39,9 @@
     font-size: 4rem;
   }
 }
+
+@media(max-width: 425px) {
+  .mobile-padding{
+    padding-top: 0rem;
+  }
+}

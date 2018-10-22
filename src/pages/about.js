@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import MessageContainer from "../components/message/MessageContainer";
 
-class More extends Component {
+class About extends Component {
   render() {
     return(
       <div className="flex-auto flex justify-center">
@@ -10,4 +10,4 @@ class More extends Component {
     )
   }
 }
-export default More
+export default About;

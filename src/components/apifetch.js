@@ -1,4 +1,6 @@
-/* class Gallery extends Component {
+import React, {Component} from 'react';
+
+class Instagram extends Component {
   
   constructor(props) {
     super(props);
@@ -8,14 +10,16 @@
     }
   }
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/photos/')
+    fetch('https://api.instagram.com/v1/users/self/?access_token=a0f4f4d4451f456f8fa7ef287c03ae7e')
     .then(response => response.json())
     .then(json => {
+      console.log(json)
       this.setState({
         isLoaded: true,
         items: json
       })
     });
+    console.log(this.state.items);
   }
 
   render() {
@@ -26,23 +30,15 @@
         <div>
           Loading...
         </div>
-      )
+      );
     }
     else{
       return(
         <div className='image-grid'>
-          <ul>
-            {items.map(item => (
-              <div>
-              <li key={item.id}>
-              {item.id} 
-              </li>
-              <img src={item.url}/>
-              </div>
-            ))}
-          </ul>
         </div>
-      )
+      );
     }
   }
-}; */
+};
+
+export default Instagram;

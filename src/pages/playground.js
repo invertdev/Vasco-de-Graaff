@@ -8,7 +8,7 @@ class Trends extends Component {
         <div className='Info about trend'></div>
         <div className='container'>
           <div>
-            <Trend/>
+            
           </div>
         </div>
       </div>

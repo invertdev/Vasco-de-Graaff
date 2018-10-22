@@ -84,7 +84,7 @@ function MenuReducer(state = false, action) {
   }
 }
 
-function ContactReducer(state = null, action) {
+function ContactForm(state = false, action) {
   switch(action.type) {
     case "CONTACT": {
       return true
@@ -97,7 +97,7 @@ const rootReducer = combineReducers({
   buttons: ButtonReducer,
   Messages: MessageReducer,
   Menu: MenuReducer,
-  ContactForm: ContactReducer,
+  ContactForm: ContactForm,
 })
 
 export default rootReducer;

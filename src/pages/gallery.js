@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-
-import "../components/css/text.css"
+import React, { Component } from 'react';
+import Instagram from '../components/apifetch';
 
 class Gallery extends Component {
   render() {
@@ -10,7 +9,9 @@ class Gallery extends Component {
           <h2>I sometimes take "PICTURES"  <span role="img" className='cameraEmoji'>📷</span></h2> 
         </div>
         <div className='Gallery gallery-area'>
-          <div></div>
+          <div>
+            <Instagram/>
+          </div>
         </div>
       </React.Fragment>
     )

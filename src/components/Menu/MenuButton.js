@@ -3,15 +3,12 @@ import HamburgerMenu from './HamburgerMenu';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {menuSelected} from '../../actions/menuSelected';
+import './menuButton.css'
 
-const style = {
-  paddingTop: '20px',
-  zIndex: 4
-}
 class MenuButton extends Component{
   render(){
     return(
-      <div className=' absolute ' style={style}>
+      <div className=' absolute menuButton' >
         <button className=' menu-button noSelect menu'
         onClick={()=>{
           this.props.menuSelected()
