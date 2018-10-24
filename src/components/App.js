@@ -6,8 +6,7 @@ import Canvas from "./Background/Canvas";
 import Home from "../pages/home";
 import About from "../pages/about";
 import Gallery from "../pages/gallery";
-// eslint-disable-next-line
-import { BrowserRouter as Router, Route , Switch } from "react-router-dom";
+import { Route , Switch } from "react-router-dom";
 
 class App extends Component {
   render() {

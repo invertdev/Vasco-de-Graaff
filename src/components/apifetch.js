@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+/* import React, {Component} from 'react';
 
 class Instagram extends Component {
   
@@ -41,4 +41,4 @@ class Instagram extends Component {
   }
 };
 
-export default Instagram;
+export default Instagram; */

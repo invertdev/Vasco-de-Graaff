@@ -50,11 +50,11 @@ class Home extends Component {
               <div className="" style={{width: terminalsize}} >
                 <Terminal />
               </div>
-              <div>{(this.state.width > 1024) ? 
+              {/* <div>{(this.state.width > 1024) ? 
                 <MessageContainer /> : null
               }
                 
-              </div>
+              </div> */}
           </div>
         </div>
       </div>
