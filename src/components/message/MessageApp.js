@@ -54,7 +54,7 @@ function mapStateToProps(state) {
   };
 }
 
-function matchDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({ 
     selectButton: selectButton,
     contact: contact
@@ -63,5 +63,5 @@ function matchDispatchToProps(dispatch) {
 
 export default connect(
   mapStateToProps,
-  matchDispatchToProps
+  mapDispatchToProps
 )(MessageApp);
